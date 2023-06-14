@@ -1,0 +1,50 @@
+.container {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-around;
+    width: 96%;
+    padding: .5em;
+    color: #ffffff;
+    background: #020841;
+}
+
+.logo p {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth p {
+    font-size: 19px;
+}
+
+.utilities,
+.auth {
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly
+}
+
+.add-task,
+.auth-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.utilities>.add-task>p:hover{
+    color: #ffc400;
+}
+
+button {
+    width: 100%;
+    height: 2.5em;
+    border: none;
+}
+
+button:hover {
+    width: 100%;
+    height: 2.5em;
+    background: #ffc400;
+    color: #ffffff;
+}

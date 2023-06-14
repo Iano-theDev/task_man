@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*Global imports */
+@import "~font-awesome/css/font-awesome.min.css";
+
+
+body {
+    background: #e3eeed;
+}

@@ -1,0 +1,12 @@
+<div class="container" *ngIf='users.length'>
+    <div class="card" *ngFor='let user of users'>
+        <div class="avatar">
+            <img [src]="user.avatar" alt="">
+        </div>
+        <div class="details">
+            <p>Name: {{ user.name }}</p>
+            <p>Email: {{ user.email}}</p>
+            <p>Rating: {{ user.rating }}</p>
+        </div>
+    </div>
+</div>

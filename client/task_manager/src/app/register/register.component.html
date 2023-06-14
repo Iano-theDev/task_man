@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Register</h1>
+    <form>
+        <div class="data-field">
+            <label>Username</label>
+            <input type="text" [formControl]="username">
+        </div>
+        <div class="data-field">
+            <label>Email</label>
+            <input type="email" [formControl]="email">
+        </div>
+        <div class="data-field">
+            <label>Password</label>
+            <input type="password" [formControl]="password">
+        </div>
+        <div class="submit-data">
+            <button type="submit" onSubmit="logData()">submit</button>
+        </div>
+
+    </form>
+</div>
+
