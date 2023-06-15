@@ -1,7 +1,9 @@
 <div class="container" *ngIf='users.length'>
     <div class="card" *ngFor='let user of users'>
         <div class="avatar">
-            <img [src]="user.avatar" alt="">
+            <img [src]="user.avatar"
+                [style.width.px]=""
+                [style.width.px]="" alt="">
         </div>
         <div class="details">
             <p>Name: {{ user.name }}</p>

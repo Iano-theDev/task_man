@@ -5,11 +5,14 @@ import { User } from '../models/user.model';
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [CommonModule, NgFor],
+  imports: [CommonModule],
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
+  // imageWidth: number = 200;
+  // imageHeight: number = 250;
+
   users: User[] = [
   {
     name: "Ian",
@@ -49,3 +52,4 @@ export class UsersComponent {
   }
 ];
 }
+   

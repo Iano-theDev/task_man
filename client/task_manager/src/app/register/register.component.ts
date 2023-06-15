@@ -14,9 +14,8 @@ export class RegisterComponent {
   email = new FormControl('');
   password = new FormControl('');  
 
-  logData(event:any) {
-    
-    console.log(this.username, this.email, this.password)
-    event.preventDefault();
+  logData(e:Event) { 
+    e.preventDefault()
+    console.log(this.username.value, this.email.value, this.password.value);
   }
 }
