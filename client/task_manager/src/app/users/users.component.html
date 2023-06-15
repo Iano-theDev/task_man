@@ -1,9 +1,11 @@
 <div class="container" *ngIf='users.length'>
     <div class="card" *ngFor='let user of users'>
         <div class="avatar">
-            <img [src]="user.avatar"
+            <img 
+                [src]="user.avatar"
                 [style.width.px]=""
-                [style.width.px]="" alt="" (click)="toogleDetails()">
+                [style.width.px]="" 
+                (click)="toogleDetails()">
         </div>
         <div class="details" *ngIf="showDetails">
             <p>Name: {{ user.name }}</p>
