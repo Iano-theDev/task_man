@@ -12,6 +12,7 @@ import { User } from '../models/user.model';
 export class UsersComponent {
   // imageWidth: number = 200;
   // imageHeight: number = 250;
+  showDetails: boolean = false;
 
   users: User[] = [
   {
@@ -51,5 +52,9 @@ export class UsersComponent {
     avatar: "https://i.pinimg.com/564x/d1/49/da/d149da1dac7b0d85b182df84d18b6740.jpg"
   }
 ];
+
+toogleDetails() {
+  this.showDetails = !this.showDetails;
+}
 }
    

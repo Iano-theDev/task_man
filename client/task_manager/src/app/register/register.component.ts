@@ -19,3 +19,4 @@ export class RegisterComponent {
     console.log(this.username.value, this.email.value, this.password.value);
   }
 }
+ 
