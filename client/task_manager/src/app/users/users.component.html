@@ -10,9 +10,9 @@
                     [src]="user.avatar"
                     [style.width.px]=""
                     [style.width.px]="" 
-                    (click)="toogleDetails()">
+                    (click)="toogleDetails(user.id)">
             </div>
-            <div class="details" *ngIf="showDetails">
+            <div class="details" *ngIf="user.id === detailsVisibleUserId">
                 <p>Name: {{ user.name }}</p>
                 <p>Email: {{ user.email }}</p>
                 <p>Rating: {{ user.rating }}</p>
