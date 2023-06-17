@@ -1,10 +1,16 @@
 <div class="container" *ngIf='users.length'>
     <div class="filter">
-        <input type="text"[(ngModel)]="filterUsers">
-        <button>search user</button>
+        <div class="search">
+            <input type="text" [(ngModel)]="filterUsers">
+            <button (click)="clearSearch()">clear</button>
+        </div>
+        <div class="output-text">
+            <p><span>searching for...</span>   {{ filterUsers}}</p>
+        </div>
+
     </div>
     <div class="card-container">
-        <div class="card" *ngFor='let user of users'>
+        <div class="card" *ngFor='let user of filteredUsers'>
             <div class="avatar">
                 <img 
                     [src]="user.avatar"
@@ -12,7 +18,7 @@
                     [style.width.px]="" 
                     (click)="toogleDetails(user.id)">
             </div>
-            <div class="details" *ngIf="user.id === detailsVisibleUserId">
+            <div class="details" *ngIf=" showUserDetails === user.id && checkDetails === true">
                 <p>Name: {{ user.name }}</p>
                 <p>Email: {{ user.email }}</p>
                 <p>Rating: {{ user.rating }}</p>

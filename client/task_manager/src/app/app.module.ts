@@ -7,7 +7,6 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
-
 @NgModule({
     declarations: [
         AppComponent,

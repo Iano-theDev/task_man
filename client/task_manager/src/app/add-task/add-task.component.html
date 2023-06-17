@@ -1,1 +1,22 @@
-<p>add-task works!</p>
+<div class="container">
+    <h1>Add task</h1>
+    <form>
+        <div class="data-field">
+            <label>Title</label>
+            <input type="text" [formControl]="title">
+        </div>
+        <div class="data-field">
+            <label>description</label>
+            <input type="text" [formControl]="description" >
+        </div>
+        <div class="data-field">
+            <label>Date</label>
+            <input type="date" [formControl]="date">
+        </div>
+        <div class="submit-data">
+            <button type="submit" (click)="logData($event)">Add</button>
+        </div>
+
+    </form>
+</div>
+

@@ -15,20 +15,23 @@
 }
 
 .filter {
+    display: flex;
+    flex-direction: column;
     padding: .5em;
     padding-left: 25%;
 }
 
-.filter > input {
+.filter >.search > input {
     width: 40%;
     height: 2em;
     border: 1px solid #ccc;
     outline: none;
+    
 }
 
-.filter > button {
+.filter > .search > button {
     color: #fff;
-    background: rgb(40, 131, 242);
+    background: #020841;
     height: 2em;
     border: none;
     transition: all ease 1s;
@@ -36,9 +39,23 @@
 
 .filter > button:hover {
     color: #fff;
-    background: #020841;
+    background: rgb(40, 131, 242);
     height: 2em;
     border: none;
+}
+
+.filter > .output-text {
+    /* border: 1px solid blue; */
+    display: flex;
+    padding: .5em;
+    /* justify-content: center; */
+    align-items: center;
+    width: 40%;
+}
+
+.filter > .output-text p span{
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .card {
