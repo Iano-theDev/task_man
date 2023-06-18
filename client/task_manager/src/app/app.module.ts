@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
+import { StarComponent } from './shared/stars/star.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
         RegisterComponent,
         LoginComponent,
         HeaderComponent,
+        StarComponent
     ]
 })
 export class AppModule { }

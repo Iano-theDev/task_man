@@ -1,35 +1,37 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { User } from '../models/user.model';
 import { FormsModule } from '@angular/forms';
 import { ChangeColorPipe } from '../shared/changeColor.pipe';
+import { StarComponent } from "../shared/stars/star.component";
 
 @Component({
-  selector: 'app-users',
-  standalone: true,
-  imports: [CommonModule, FormsModule, ChangeColorPipe],
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+    selector: 'app-users',
+    standalone: true,
+    templateUrl: './users.component.html',
+    styleUrls: ['./users.component.css'],
+    imports: [CommonModule, FormsModule, ChangeColorPipe, StarComponent]
 })
-export class UsersComponent implements OnInit{
+export class UsersComponent implements OnInit {
   // imageWidth: number = 200;
   // imageHeight: number = 250;
-
-  showUserDetails?: number | null ;
+  showUserDetails?: number | null;
 
   checkDetails: boolean = false;
 
   filteredUsers?: User[]
 
-  private _filterUsers: string = '';
-  get filterUsers():string {
-    return this._filterUsers
+  private _filterBy: string = '';
+
+  get filterUsers(): string {
+    return this._filterBy
   }
 
   set filterUsers(value: string) {
-    this._filterUsers = value;
-    console.log('In setter: ', value);
+    this._filterBy = value;
     this.filteredUsers = this.performFilter(value)
+    // console.log(`_filtered: ${this._filterBy}`)
+    // console.log(`filtered: ${this.filterUsers}`)
   }
   users: User[] = [
     {
@@ -85,23 +87,23 @@ export class UsersComponent implements OnInit{
 
   performFilter(searchString: string): User[] {
     searchString = searchString.toLocaleLowerCase()
-    return this.users.filter((user: User) => 
+    return this.users.filter((user: User) =>
       user.name.toLocaleLowerCase().includes(searchString)
     )
   }
 
   toogleDetails(userId: number) {
     this.showUserDetails === userId ? null : this.showUserDetails = userId
-    this.checkDetails = !this.checkDetails 
+    this.checkDetails = !this.checkDetails
     // console.log(this.showUserDetails)
     // console.log(this.checkDetails)
   }
 
   clearSearch(): void {
-   this.filterUsers = '' 
+    this.filterUsers = ''
   }
 
   ngOnInit(): void {
-      this.filterUsers = ''
+    this.filterUsers = ''
   }
 }
