@@ -1,5 +1,6 @@
 <div class="container" *ngIf='users.length'>
     <div class="filter">
+        <div class="title">{{title}}</div>
         <div class="search">
             <input type="text" [(ngModel)]="filterUsers">
             <button (click)="clearSearch()">clear</button>
@@ -21,7 +22,7 @@
             <div class="details">
                 <p>Name: {{ user.name }}</p>
                 <p>Email: {{ user.email }}</p>
-                <p><app-star [rating]="user.rating"></app-star></p>
+                <p><app-star [rating]="user.rating" (ratingClicked)="onRatingClick($event)"></app-star></p>
             </div>
         </div>
     </div>

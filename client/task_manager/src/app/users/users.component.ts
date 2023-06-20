@@ -15,6 +15,8 @@ import { StarComponent } from "../shared/stars/star.component";
 export class UsersComponent implements OnInit {
   // imageWidth: number = 200;
   // imageHeight: number = 250;
+  title: string = 'TaskMan!'
+
   showUserDetails?: number | null;
 
   checkDetails: boolean = false;
@@ -105,5 +107,10 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.filterUsers = ''
+  }
+
+  onRatingClick(message: string) :void {
+    // this.title = `Hello, ${message}!`
+    console.log(message)
   }
 }
