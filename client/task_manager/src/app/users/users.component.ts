@@ -55,13 +55,18 @@ export class UsersComponent implements OnInit {
   }
 
   clearSearch(): void {
-    this.filterUsers = ''
+    this.filterUsers = ' '
     this.getUsersService.getUsers()
   }
 
   ngOnInit(): void {
+    // this.users = this.getUsersService.getUsers()
     this.filterUsers = ''
-    this.users = this.getUsersService.getUsers()
+  }
+
+  usersInit() {
+    this.users = this.getUsersService.getUsers();
+    this.filterUsers = ''
   }
 
   onRatingClick(message: string) :void {
