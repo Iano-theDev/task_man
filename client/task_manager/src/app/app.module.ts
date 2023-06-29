@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { StarComponent } from './shared/stars/star.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
     declarations: [
         AppComponent,
@@ -20,7 +21,8 @@ import { StarComponent } from './shared/stars/star.component';
         RegisterComponent,
         LoginComponent,
         HeaderComponent,
-        StarComponent
+        StarComponent,
+        BrowserAnimationsModule
     ]
 })
 export class AppModule { }

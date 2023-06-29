@@ -7,11 +7,15 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { UsersComponent } from './users/users.component';
+import { VaccCardComponent } from './vacc-card/vacc-card.component';
+import { VaccMatTableComponent } from './vacc-mat-table/vacc-mat-table.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'sub-register', component: RegisterComponent, outlet: 'sidebar'},
   { path: 'tasks', component: TasksComponent },
+  { path: 'vacc', component: VaccCardComponent },
+  { path: 'vacc-mat', component: VaccMatTableComponent},
   { path: 'new-task', component: AddTaskComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },

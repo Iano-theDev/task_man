@@ -4,7 +4,7 @@ import { User } from '../models/user.model';
 import { FormsModule } from '@angular/forms';
 import { ChangeColorPipe } from '../shared/changeColor.pipe';
 import { StarComponent } from "../shared/stars/star.component";
-import { UserService } from '../shared/services/users.service';
+// import { UserService } from '../shared/services/users.service';
 
 @Component({
     selector: 'app-users',
@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
 
   filteredUsers?: User[]
 
-  constructor(private getUsersService: UserService) {}
+  // constructor(private getUsersService: UserService) {}
 
   private _filterBy: string = '';
 
@@ -54,20 +54,20 @@ export class UsersComponent implements OnInit {
     // console.log(this.checkDetails)
   }
 
-  clearSearch(): void {
-    this.filterUsers = ' '
-    this.getUsersService.getUsers()
-  }
+  // clearSearch(): void {
+  //   this.filterUsers = ' '
+  //   this.getUsersService.getUsers()
+  // }
 
   ngOnInit(): void {
     // this.users = this.getUsersService.getUsers()
     this.filterUsers = ''
   }
 
-  usersInit() {
-    this.users = this.getUsersService.getUsers();
-    this.filterUsers = ''
-  }
+  // usersInit() {
+  //   this.users = this.getUsersService.getUsers();
+  //   this.filterUsers = ''
+  // }
 
   onRatingClick(message: string) :void {
     // this.title = `Hello, ${message}!`
