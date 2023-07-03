@@ -1,18 +1,22 @@
 <div>
-    <table>
-      <thead>
-        <tr>
-          <th>enable</th>
-          <th >Vaccine Name</th> <!-- Empty cell for the top-left corner -->
-          <th *ngFor="let month of months">{{ month }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let vaccine of vaccines">
-          <input type="checkbox">
-          <th>{{ vaccine.name }}</th>
-          <td [ngStyle]="{'background-color': getCellColor(vaccine, month)}" *ngFor="let month of months; let i = index;" (click)="cellClicked(vaccine, month)">{{ getCellData(vaccine, month) }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="11" class="heading">{{vaccCard.heading}}</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Vaccine Names</td>
+        <td *ngFor="let month of vaccCard.dates">{{month}}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vaccine of vaccCard.vaccines">
+        <td><input type="checkbox"></td>
+        <th>{{vaccine.name}}</th>
+        <td *ngFor="let month of vaccCard.dates" (click)="cellClicked(vaccine, month)"
+        [ngStyle]="{'background-color': getCellColor(vaccine, month)}">{{getCellData(vaccine, month)}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
