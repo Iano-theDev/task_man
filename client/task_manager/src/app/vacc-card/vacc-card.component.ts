@@ -14,12 +14,12 @@ export class VaccCardComponent implements OnInit {
 
   
   vaccCard!: VaccCard;
-  errorMessage: string = ''
+  errorMessage: string = '';
 
   constructor(private vaccCardService: VaccCardService){}
 
-  ngOnInit(): void {
-    this.vaccCardService.getVaccTableData().subscribe({
+  async ngOnInit(): Promise<void> {
+    (await this.vaccCardService.getVaccTableData()).subscribe({
       next: vacc => this.vaccCard = vacc.table,
       error: err => this.errorMessage = err
     })
@@ -41,6 +41,7 @@ export class VaccCardComponent implements OnInit {
           if (d.doseMonth === month) {
             doseClicked = d.doseName
             console.log(`Vacc: ${vaccine.name} -> Dose: ${doseClicked}`)
+            console.log(d);
           }
         })
   }
@@ -60,6 +61,10 @@ export class VaccCardComponent implements OnInit {
     })
 
     return bgColor
+  }
+
+  getMultiDose(vaccine: Vaccine) {
+    console.log(JSON.stringify(vaccine.dose))
   }
 
 }

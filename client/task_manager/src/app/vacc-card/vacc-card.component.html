@@ -13,7 +13,7 @@
     <tbody>
       <tr *ngFor="let vaccine of vaccCard.vaccines">
         <td><input type="checkbox"></td>
-        <th>{{vaccine.name}}</th>
+        <th (click)="getMultiDose(vaccine)">{{vaccine.name}}</th>
         <td *ngFor="let month of vaccCard.dates" (click)="cellClicked(vaccine, month)"
         [ngStyle]="{'background-color': getCellColor(vaccine, month)}">{{getCellData(vaccine, month)}}</td>
       </tr>

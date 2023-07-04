@@ -12,10 +12,11 @@ export class VaccCardService {
 
     constructor(private http: HttpClient){}
 
-    getVaccTableData() : Observable<{table: VaccCard}>{
-        return this.http.get<{table: VaccCard}>(this.vaccCardUrl).pipe(
+    async getVaccTableData() : Promise<Observable<{table: VaccCard}>>{
+        const response  = await this.http.get<{table: VaccCard}>(this.vaccCardUrl).pipe(
             catchError(this.handleError)
         );
+        return  response
     }
 
     private handleError(err: HttpErrorResponse){
