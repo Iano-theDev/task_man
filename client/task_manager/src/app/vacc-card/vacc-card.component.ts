@@ -64,7 +64,9 @@ export class VaccCardComponent implements OnInit {
   }
 
   getMultiDose(vaccine: Vaccine) {
-    console.log(JSON.stringify(vaccine.dose))
+    console.log(vaccine.dose)
   }
+
+  
 
 }

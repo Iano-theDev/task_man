@@ -14,7 +14,7 @@
         ],
         "vaccines": [
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "Tuberculosis",
                 "dose": [
                     {
@@ -25,7 +25,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "Hep B virus",
                 "dose": [
                     {
@@ -36,7 +36,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "ROTA virus",
                 "dose": [
                     {
@@ -57,7 +57,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "Hexavalent",
                 "dose": [
                     {
@@ -78,7 +78,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "Pneumococcal conjugated vaccine",
                 "dose": [
                     {
@@ -104,7 +104,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "OPV",
                 "dose": [
                     {
@@ -130,7 +130,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "Pentavalent",
                 "dose": [
                     {
@@ -141,7 +141,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "Measles, Mumps, Rubela",
                 "dose": [
                     {
@@ -157,7 +157,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "Varcella",
                 "dose": [
                     {
@@ -173,7 +173,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "Tretavalent Acellular",
                 "dose": [
                     {
@@ -184,7 +184,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "DTaP Booster",
                 "dose": [
                     {
@@ -195,7 +195,7 @@
                 ]
             },
             {
-                "checkBox": false,
+                "checkBox": true,
                 "name": "Tdap",
                 "dose": [
                     {
