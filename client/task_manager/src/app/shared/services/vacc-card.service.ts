@@ -12,8 +12,8 @@ export class VaccCardService {
 
     constructor(private http: HttpClient){}
 
-    async getVaccTableData() : Promise<Observable<{table: VaccCard}>>{
-        const response  = await this.http.get<{table: VaccCard}>(this.vaccCardUrl).pipe(
+    getVaccTableData() : Observable<{table: VaccCard}>{
+        const response  = this.http.get<{table: VaccCard}>(this.vaccCardUrl).pipe(
             catchError(this.handleError)
         );
         return  response

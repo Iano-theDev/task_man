@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VaccCardService } from '../shared/services/vacc-card.service';
 import { VaccCard, Vaccine } from '../models/vacc-card.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-vacc-card',
@@ -18,8 +19,8 @@ export class VaccCardComponent implements OnInit {
 
   constructor(private vaccCardService: VaccCardService){}
 
-  async ngOnInit(): Promise<void> {
-    (await this.vaccCardService.getVaccTableData()).subscribe({
+   ngOnInit(): void {
+    this.vaccCardService.getVaccTableData().subscribe({
       next: vacc => this.vaccCard = vacc.table,
       error: err => this.errorMessage = err
     })
