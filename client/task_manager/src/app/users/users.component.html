@@ -1,12 +1,12 @@
 <div >
-    <!-- <button (click)="usersInit">Get Users</button> -->
+    <button (click)="usersInit">Get Users</button>
 </div>
-<div class="container" *ngIf='users'>
+<div class="container" *ngIf='users?.length'>
     <div class="filter">
         <div class="title">{{title}}</div>
         <div class="search">
             <input type="text" [(ngModel)]="filterUsers">
-            <!-- <button (click)="clearSearch()">clear</button> -->
+            <button (click)="clearSearch()">clear</button>
         </div>
         <div class="output-text">
             <p><span>searching for...</span>   {{ filterUsers }}</p>

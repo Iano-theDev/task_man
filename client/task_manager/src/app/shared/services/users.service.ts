@@ -7,7 +7,7 @@ import { Observable, catchError, tap, throwError } from 'rxjs'
     providedIn: "root"
 })
 export class UserService{
-    private usersUrl = './src/assets/users.json' 
+    private usersUrl = 'assets/users.json' 
 
     constructor(
         private http: HttpClient

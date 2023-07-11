@@ -12,3 +12,5 @@ PROGRESS:
 TODO
 
 ** update data structure of the User object to control unexpected detalil expansion behavior -- Add detailsExpansion prop(boolean)
+
+1. Custom pipe to sort items. Sort in various specifiable ways eg. sort by dateCreated, alphabets, rating, etc.

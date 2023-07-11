@@ -25,8 +25,8 @@ export class UsersComponent implements OnInit {
 
   filteredUsers?: User[]
 
-  // users: Observable<User[]> = [];
-  users?: User[]
+  users: User[] = []
+
   errorMessage?: string
 
   constructor(private getUsersService: UserService) {}
@@ -39,17 +39,17 @@ export class UsersComponent implements OnInit {
 
   set filterUsers(value: string) {
     this._filterBy = value;
-    // this.filteredUsers = this.performFilter(value)
+    this.filteredUsers = this.performFilter(value)
     console.log(`_filtered: ${this._filterBy}`)
     console.log(`filtered: ${this.filterUsers}`)
   }
 
-  // performFilter(searchString: string): User[] {
-  //   searchString = searchString.toLocaleLowerCase()
-  //   return this.users.pipe((user: User) =>
-  //     user.name.toLocaleLowerCase().includes(searchString)
-  //   )
-  // }
+  performFilter(searchString: string): User[] {
+    searchString = searchString.toLocaleLowerCase()
+    return this.users.filter((user: User) =>
+      user.name.toLocaleLowerCase().includes(searchString)
+    )
+  }
 
   toogleDetails(userId: number) {
     this.showUserDetails === userId ? null : this.showUserDetails = userId
@@ -64,12 +64,12 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.users = this.getUsersService.getUsers()
     this.getUsersService.getUsers().subscribe({
       next: users => this.users = users,
       error: err => this.errorMessage = err
     })
     this.filterUsers = ''
+    console.log('filtered users', this.filterUsers);
   }
 
   usersInit() {
@@ -78,6 +78,8 @@ export class UsersComponent implements OnInit {
       error: err => this.errorMessage = err
     })
     this.filterUsers = ''
+    console.log('filtered users', this.filterUsers);
+    
   }
 
   onRatingClick(message: string) :void {
