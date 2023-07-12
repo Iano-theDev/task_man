@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { UsersComponent } from './users/users.component';
 import { VaccCardComponent } from './vacc-card/vacc-card.component';
 import { VaccMatTableComponent } from './vacc-mat-table/vacc-mat-table.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'new-task', component: AddTaskComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'users', component: UsersComponent},
+  { path: 'profile', component: UpdateProfileComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];

@@ -9,13 +9,11 @@ import { Observable, catchError, tap, throwError } from 'rxjs'
 export class UserService{
     private usersUrl = 'assets/users.json' 
 
-    constructor(
-        private http: HttpClient
-    ){}
+    constructor(private http: HttpClient){}
 
     getUsers() : Observable<User[]> {
         return this.http.get<User[]>(this.usersUrl).pipe(
-            tap(data => console.log('my data: ', JSON.stringify(data))), catchError(this.handleError)
+            tap(data => console.log('my data: ', data)), catchError(this.handleError)
         )
     }
 
