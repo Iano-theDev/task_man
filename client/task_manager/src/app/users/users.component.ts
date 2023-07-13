@@ -43,12 +43,15 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.filterUsers = ''
     this.getUsersService.getUsers().subscribe({
-      next: users => this.users = users,
+      next: users =>{
+        this.users = users
+        console.log('filtered users', this.filterUsers)
+        this.filterUsers = ''
+      },
       error: err => this.errorMessage = err
     })
-    console.log('filtered users', this.filterUsers);
+ 
   }
 
   toogleDetails(userId: number) {
@@ -62,16 +65,6 @@ export class UsersComponent implements OnInit {
     this.filterUsers = ''
     this.getUsersService.getUsers()
     console.log('filtered users', this.filterUsers);
-  }
-
-  usersInit() {
-    this.getUsersService.getUsers().subscribe({
-      next: users => this.users = users,
-      error: err => this.errorMessage = err
-    })
-    this.filterUsers = ''
-    console.log('filtered users', this.filterUsers);
-
   }
 
   onRatingClick(message: string): void {
