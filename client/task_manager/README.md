@@ -15,3 +15,4 @@ TODO
 
 1. Create a button, that opens a dialog box, which contains a new 'chart-component'. This chart component will containa chart of usersId vs userRating
 2. Custom pipe to sort items. Sort in various specifiable ways eg. sort by dateCreated, alphabets, rating, etc.
+3. Fix toogle user details.
