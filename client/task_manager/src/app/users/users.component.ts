@@ -15,8 +15,7 @@ import { UserService } from '../shared/services/users.service';
 })
 export class UsersComponent implements OnInit {
   title: string = 'TaskMan!'
-  showUserDetails?: number | null;
-  checkDetails: boolean = false;
+  showUserDetails: boolean = false;
   filteredUsers: User[] = []
   users: User[] = []
   errorMessage?: string
@@ -54,11 +53,28 @@ export class UsersComponent implements OnInit {
  
   }
 
-  toogleDetails(userId: number) {
-    this.showUserDetails === userId ? null : this.showUserDetails = userId
-    this.checkDetails = !this.checkDetails
-    console.log(this.showUserDetails)
-    console.log(this.checkDetails)
+  toggleDetails(currentUserId: number){
+    let detailsStatus: boolean = false
+    let currentUser = this.users.find(user => {
+      if (user.id === currentUserId) {
+        let toggleDetailsStatus: boolean = false;
+        toggleDetailsStatus = !toggleDetailsStatus
+        detailsStatus = toggleDetailsStatus
+      }
+    })
+    console.log(detailsStatus);
+    
+    // if (currentUser){
+    //   let updatedUser = {...currentUser,toggleUseDetails }
+    //   toggleUseDetails = !toggleUseDetails
+    //   console.log('updatedUser', updatedUser.toggleUseDetails);
+      
+    // }
+    // console.log('currrent user:', currentUser);
+    // console.log('showuser deatsils:', this.showUserDetails);
+    
+
+    
   }
 
   clearSearch(): void {

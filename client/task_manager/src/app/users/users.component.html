@@ -16,13 +16,15 @@
                     [src]="user.avatar"
                     [style.width.px]=""
                     [style.width.px]="" 
-                    (click)="toogleDetails(user.id)">
+                    (click)="toggleDetails(user.id)">
             </div>
+            <!-- <div [ngClass]="toggleDetails(user.id)"> -->
             <div class="details">
                 <p>Name: {{ user.name }}</p>
                 <p>Email: {{ user.email }}</p>
                 <p><app-star [rating]="user.rating" (ratingClicked)="onRatingClick($event)"></app-star></p>
             </div>
+        <!-- </div> -->
         </div>
     </div>
 </div>
