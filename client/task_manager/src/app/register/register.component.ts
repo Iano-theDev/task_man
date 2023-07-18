@@ -16,7 +16,14 @@ export class RegisterComponent {
 
   logData(e:Event) { 
     e.preventDefault()
-    console.log(this.username.value, this.email.value, this.password.value);
+    
+    
+    let newUser = {
+      username: this.username.value,
+      email: this.email.value,
+      password: this.password.value
+    }
+    console.log('newUser: ', newUser);
   }
 }
  
