@@ -3,6 +3,7 @@
     "concurrently": "^8.2.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "mongoose": "^7.4.0",
     "nodemon": "^3.0.1"
   },
   "name": "server",
@@ -12,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:build": "tsc -w",
     "start:run": "nodemon dist/server.js",
-    "start": "concurrently npm:start:*" 
+    "start": "concurrently npm:start:*"
   },
   "keywords": [],
   "author": "",

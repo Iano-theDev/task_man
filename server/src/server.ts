@@ -1,19 +1,19 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import fs from 'node:fs'
+import db from './config'
+import usersRouter from './router/users.routes'
 
 dotenv.config()
 
-const app = express()
 const port = process.env.PORT
+const app = express()
+app.use(express.json()) // allow use of json in the request body
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
+db.on('error', (err)=>{console.log("connection failed: ", err)})
+db.once('open', ()=> console.log("Database connected successfully!"))
 
-app.get('/users', (req, res) => {
-    res.sendFile(__dirname + '/users.json')
-})
+app.use('/users', usersRouter);
+
 
 app.listen(port, () => {
     console.log(`server is running on port ${port}`)
