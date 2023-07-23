@@ -4,7 +4,9 @@ import User from "../models/user.model"
 import { subscribe } from "diagnostics_channel";
 
 
-
+interface ExtendedResponse extends Response {
+    user: any
+}
 
 
 // get all users
@@ -32,8 +34,8 @@ export const createUser = async (req: Request, res: Response) => {
     }
 }
 // get one user
-export const getOneUser =  async(req: Request, res: Response) => {
-    
+export const getOneUser =  async(req: Request, res: ExtendedResponse) => {
+    res.send(res.user)
 }
 // update user
 export const updateUser =  async(req: Request, res: Response) => {
