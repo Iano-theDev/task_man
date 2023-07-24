@@ -1,6 +1,7 @@
-import { Router } from "express";
+import { NextFunction, Router } from "express";
+import { Response } from "express";
 import { createUser, deleteUser, getAllUsers, getOneUser, updateUser } from "../controller/users.controller";
-import { getUser } from "../middleware/users.middleware";
+import { ExtendedRequest, getUser } from "../middleware/users.middleware";
 
 const usersRouter = Router()
 

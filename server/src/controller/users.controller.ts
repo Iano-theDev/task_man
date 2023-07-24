@@ -1,10 +1,14 @@
-import { Express } from "express";
+import { Express, NextFunction } from "express";
 import { Request, Response } from "express";
 import User from "../models/user.model"
 import { subscribe } from "diagnostics_channel";
 
 
 interface ExtendedResponse extends Response {
+    user: any
+}
+
+interface ExtendedRequest extends Request {
     user: any
 }
 
@@ -34,8 +38,13 @@ export const createUser = async (req: Request, res: Response) => {
     }
 }
 // get one user
-export const getOneUser =  async(req: Request, res: ExtendedResponse) => {
-    res.send(res.user)
+export const getOneUser =  async(req: Request, res: Response) => {
+    const usr = res.locals.user;
+    console.log("usr", usr, "res", res)
+    if (!usr || usr == null) return res.status(400).json({message: "No user"})
+    else{
+        res.status(200).json(usr)
+    }
 }
 // update user
 export const updateUser =  async(req: Request, res: Response) => {
@@ -43,6 +52,7 @@ export const updateUser =  async(req: Request, res: Response) => {
 }
 
 // delete user
-export const deleteUser =  async(req: Request, res: Response) => {
-
+export const deleteUser =  async(req: Request, res: Response, next: NextFunction) => {
+    console.log("request user", req);
+    
 }

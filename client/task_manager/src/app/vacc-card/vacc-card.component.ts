@@ -21,7 +21,10 @@ export class VaccCardComponent implements OnInit {
 
    ngOnInit(): void {
     this.vaccCardService.getVaccTableData().subscribe({
-      next: vacc => this.vaccCard = vacc.table,
+      next: vacc => {
+        this.vaccCard = vacc.table
+        console.log("findIndexOfVacc", this.findIndexOfVacc(vacc.table.vaccines[6]))
+      },
       error: err => this.errorMessage = err
     })
   }
@@ -66,6 +69,10 @@ export class VaccCardComponent implements OnInit {
 
   getMultiDose(vaccine: Vaccine) {
     console.log(vaccine.dose)
+  }
+
+  findIndexOfVacc(vacc: Vaccine): number {
+    return this.vaccCard.vaccines.indexOf(vacc)
   }
 
   

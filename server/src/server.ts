@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import db from './config'
 import usersRouter from './router/users.routes'
+import { env } from 'process'
 
 dotenv.config()
 

@@ -1,14 +1,14 @@
 import { Request, Response, NextFunction} from "express";
 import User from "../models/user.model";
 
-interface ExtendedResponse extends Response {
+export interface ExtendedRequest extends Request {
     user: any
 }
 
-export async function getUser(req: Request, res: ExtendedResponse, next: NextFunction){
+export async function getUser(req: Request, res: Response, next: NextFunction){
     let user
     try {
-        const user = User.findById(req.params.id)
+        user =  await User.findById(req.params.id)
         if (user == null){
             return res.status(404).json({message: "Cannot Find The Specified User!"})
         }
@@ -16,6 +16,6 @@ export async function getUser(req: Request, res: ExtendedResponse, next: NextFun
         return res.status(500).json({message: error.message})
     }
 
-    res.user = user
+    res.locals.user = user
     next()
 }
