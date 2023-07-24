@@ -62,7 +62,7 @@ export class UsersComponent implements OnInit {
         detailsStatus = toggleDetailsStatus
       }
     })
-    console.log(detailsStatus);
+    console.log(detailsStatus); 
     
     // if (currentUser){
     //   let updatedUser = {...currentUser,toggleUseDetails }

@@ -24,6 +24,7 @@ export class VaccCardComponent implements OnInit {
       next: vacc => {
         this.vaccCard = vacc.table
         console.log("findIndexOfVacc", this.findIndexOfVacc(vacc.table.vaccines[6]))
+        console.log("myCallBackConsumer ", this.myCallBackConsumer(1))
       },
       error: err => this.errorMessage = err
     })
@@ -37,6 +38,30 @@ export class VaccCardComponent implements OnInit {
       }
     })
     return doseNm
+  }
+
+  myCallBackConsumer(test: number): string {
+    let toBeReturned = ''
+    if (test == 1) {
+      this.myCallback("test", (res: string) => {
+        console.log("response", res)
+        toBeReturned = res
+        // return res
+      })
+    }
+    else {
+      this.myCallback("tested", (res: string) => {
+        console.log("response", res)
+        toBeReturned = res
+        // return res
+      })
+    }
+    return toBeReturned;
+  }
+
+  myCallback(data: any, cb: any){
+    if(data == "test") cb("tested well")
+    else cb("testing went bad")
   }
 
   cellClicked(vaccine: Vaccine, month: string) {
