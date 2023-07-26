@@ -10,6 +10,7 @@ import { UsersComponent } from './users/users.component';
 import { VaccCardComponent } from './vacc-card/vacc-card.component';
 import { VaccMatTableComponent } from './vacc-mat-table/vacc-mat-table.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: UpdateProfileComponent},
+  { path: 'admin', component: AdminComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
