@@ -5,8 +5,6 @@ import { TasksComponent } from './tasks/tasks.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { HeaderComponent } from './header/header.component';
-import { UsersComponent } from './users/users.component';
 import { VaccCardComponent } from './vacc-card/vacc-card.component';
 import { VaccMatTableComponent } from './vacc-mat-table/vacc-mat-table.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
