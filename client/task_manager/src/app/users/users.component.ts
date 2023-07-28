@@ -19,6 +19,7 @@ export class UsersComponent implements OnInit {
   filteredUsers: User[] = []
   users: User[] = []
   errorMessage?: string
+  dbUsers: User[] = [];
 
   constructor(private getUsersService: UserService) { }
 
@@ -51,6 +52,13 @@ export class UsersComponent implements OnInit {
       error: err => this.errorMessage = err
     })
  
+  }
+
+  getRegisteredUsers() {
+    this.getUsersService.getUsersFromDB().subscribe({
+      next: users => this.dbUsers = users,
+      error: err => this.errorMessage = err
+    }) 
   }
 
   toggleDetails(currentUserId: number){
