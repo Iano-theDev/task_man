@@ -4,10 +4,13 @@ import db from './config'
 import usersRouter from './router/users.routes'
 import { env } from 'process'
 
-dotenv.config()
+
+const app = express()
+const cors = require('cors')
+app.use(cors())
+
 
 const port = process.env.PORT
-const app = express()
 app.use(express.json()) // allow use of json in the request body
 
 db.on('error', (err)=>{console.log("connection failed: ", err)})
