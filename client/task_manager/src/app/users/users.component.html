@@ -23,7 +23,12 @@
             <div class="details">
                 <p>Name: {{ user.name }}</p>
                 <p>Email: {{ user.email }}</p>
-                <p><app-star [rating]="user.rating" (ratingClicked)="onRatingClick($event)"></app-star></p>
+                <p>
+                    <ng-container *ngIf="user.rating !== undefined">
+
+                        <app-star [rating]="user.rating" (ratingClicked)="onRatingClick($event)"></app-star>
+                    </ng-container>
+                </p>
             </div>
         <!-- </div> -->
         </div>

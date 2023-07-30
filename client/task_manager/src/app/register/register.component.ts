@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { User } from '../models/user.model';
+import { UserService } from '../shared/services/users.service';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +16,7 @@ export class RegisterComponent {
   email = new FormControl('');
   password = new FormControl('');  
 
+  constructor(private userService: UserService){}
   logData(e:Event) { 
     e.preventDefault()
     
@@ -25,5 +28,23 @@ export class RegisterComponent {
     }
     console.log('newUser: ', newUser);
   }
+
+  registerUser(){
+    let newUser = {
+      username: this.username.value,
+      email: this.email.value,
+      password: this.password.value
+    }
+    if(newUser){
+      this.userService.addUser(newUser);
+      console.log('newUser: ', newUser);
+    } else {
+      console.log("there was an error registering user!");
+      
+    }
+
+    
+  }
+
 }
  

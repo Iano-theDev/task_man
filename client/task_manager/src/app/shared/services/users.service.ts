@@ -24,6 +24,10 @@ export class UserService{
         )
     }
 
+    addUser(user: any) {
+        return this.http.post(this.dbUsersUsrl, user)
+    }
+    
     private handleError(err : HttpErrorResponse) {
         let errorMessage = '';
         if (err.error instanceof ErrorEvent) {
