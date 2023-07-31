@@ -5,15 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { ChangeColorPipe } from '../shared/changeColor.pipe';
 import { StarComponent } from "../shared/stars/star.component";
 import { UserService } from '../shared/services/users.service';
-import {MatButtonModule} from '@angular/material/button'
-import {MatIconModule} from '@angular/material/icon'
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialog} from '@angular/material/dialog';
+import { ConfirmActionComponent } from '../shared/confirm-action/confirm-action.component';
 
 @Component({
   selector: 'app-users',
   standalone: true,
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
-  imports: [CommonModule, FormsModule, ChangeColorPipe, StarComponent, MatButtonModule, MatIconModule]
+  imports: [CommonModule, FormsModule, ChangeColorPipe, StarComponent, MatButtonModule, MatIconModule, ConfirmActionComponent]
 })
 export class UsersComponent implements OnInit {
   title: string = 'TaskMan!'
@@ -23,7 +25,7 @@ export class UsersComponent implements OnInit {
   errorMessage?: string
   dbUsers: User[] = [];
 
-  constructor(private getUsersService: UserService) { }
+  constructor(private getUsersService: UserService, public dialog: MatDialog) { }
 
   private _filterBy: string = '';
   get filterUsers(): string {
@@ -93,5 +95,12 @@ export class UsersComponent implements OnInit {
   onRatingClick(message: string): void {
     this.title = `Hello, ${message}!`
     console.log(message)
+  }
+
+  // open prompt dialog box
+  openPropmtDialog() {
+    this.dialog.open(ConfirmActionComponent, {
+      width: '250px'
+    })
   }
 }
