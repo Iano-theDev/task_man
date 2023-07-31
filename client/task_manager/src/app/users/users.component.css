@@ -89,3 +89,10 @@
 .show-details {
  display: block; 
 }
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #616161;
+}

@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { ChangeColorPipe } from '../shared/changeColor.pipe';
 import { StarComponent } from "../shared/stars/star.component";
 import { UserService } from '../shared/services/users.service';
+import {MatButtonModule} from '@angular/material/button'
+import {MatIconModule} from '@angular/material/icon'
 
 @Component({
   selector: 'app-users',
   standalone: true,
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
-  imports: [CommonModule, FormsModule, ChangeColorPipe, StarComponent]
+  imports: [CommonModule, FormsModule, ChangeColorPipe, StarComponent, MatButtonModule, MatIconModule]
 })
 export class UsersComponent implements OnInit {
   title: string = 'TaskMan!'
@@ -29,16 +31,13 @@ export class UsersComponent implements OnInit {
   }
   set filterUsers(value: string) {
     this._filterBy = value;
-    console.log('value', value);
     this.filteredUsers = this.performFilter(value)
-    console.log(`_filtered: ${this._filterBy}`)
-    console.log(`filtered: ${this.filterUsers}`)
   }
 
   performFilter(searchString: string): User[] {
     searchString = searchString.toLocaleLowerCase()
     return this.users.filter((user: User) =>
-      user.name.toLocaleLowerCase().includes(searchString)
+      user.userName.toLocaleLowerCase().includes(searchString)
     )
   }
 

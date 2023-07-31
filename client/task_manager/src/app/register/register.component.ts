@@ -29,23 +29,22 @@ export class RegisterComponent {
     console.log('newUser: ', newUser);
   }
 
-  registerUser(e: Event){
-    e.preventDefault()
-
+  registerUser(){
     let newUser = {
-      username: this.username.value,
+      userName: this.username.value,
       email: this.email.value,
       password: this.password.value
     }
-    if(newUser){
-      this.userService.addUser(JSON.stringify(newUser))
-      console.log('newUser: ', JSON.stringify(newUser));
-    } else {
-      console.log("there was an error registering user!");
+    try {
+      if (!newUser){
+        throw "User entered is invalid"
+      }
+      this.userService.addUser(newUser).subscribe(res=>console.log(res))
+      console.log('newUser: ', newUser);
       
-    }
-
-    
+    } catch (error) {
+      console.log("Error: ", error)
+    }   
   }
 
 }

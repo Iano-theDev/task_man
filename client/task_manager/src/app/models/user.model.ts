@@ -1,8 +1,11 @@
+import { ITask } from "./task.model";
+
 export interface User{
     id: number;
-    name: string;
+    userName: string;
     email: string;
     rating?: number;
     avatar?: string,
-    admin?: boolean
+    admin?: boolean,
+    tasks?: ITask[]
 }

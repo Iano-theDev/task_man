@@ -52,7 +52,17 @@ export const updateUser =  async(req: Request, res: Response) => {
 }
 
 // delete user
-export const deleteUser =  async(req: Request, res: Response, next: NextFunction) => {
-    console.log("request user", req);
+export const deleteUser =  async(req: Request, res: Response) => {
+
+    const user = res.locals.user
+    if (user){
+        await User.deleteOne(user)
+        console.log("Deleted user successfully",);
+        res.status(200).json({message: "User Deleted successfully!"})
+    }
+    else {
+        console.log("No user found!")
+        res.status(404).json({message: "no user found"})
+    }
     
 }
