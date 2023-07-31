@@ -29,15 +29,17 @@ export class RegisterComponent {
     console.log('newUser: ', newUser);
   }
 
-  registerUser(){
+  registerUser(e: Event){
+    e.preventDefault()
+
     let newUser = {
       username: this.username.value,
       email: this.email.value,
       password: this.password.value
     }
     if(newUser){
-      this.userService.addUser(newUser);
-      console.log('newUser: ', newUser);
+      this.userService.addUser(JSON.stringify(newUser))
+      console.log('newUser: ', JSON.stringify(newUser));
     } else {
       console.log("there was an error registering user!");
       
