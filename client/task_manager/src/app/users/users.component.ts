@@ -7,7 +7,7 @@ import { StarComponent } from "../shared/stars/star.component";
 import { UserService } from '../shared/services/users.service';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { ConfirmActionComponent } from '../shared/confirm-action/confirm-action.component';
 
 @Component({
@@ -25,7 +25,7 @@ export class UsersComponent implements OnInit {
   errorMessage?: string
   dbUsers: User[] = [];
 
-  constructor(private getUsersService: UserService, public dialog: MatDialog) { }
+  constructor(private getUsersService: UserService, public dialog: MatDialog, public dialogRef: MatDialogRef<ConfirmActionComponent> ) { }
 
   private _filterBy: string = '';
   get filterUsers(): string {
