@@ -14,7 +14,7 @@ import { ConfirmActionComponent } from '../shared/confirm-action/confirm-action.
 })
 export class HomeComponent {
 
-    constructor(private logger: Logger, public dialogRef: MatDialogRef<ConfirmActionComponent>){}
+    constructor(private logger: Logger){}
 
     logTest() {
         this.logger.log('logging... My logger works!')

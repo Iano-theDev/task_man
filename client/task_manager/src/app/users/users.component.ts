@@ -25,7 +25,7 @@ export class UsersComponent implements OnInit {
   errorMessage?: string
   dbUsers: User[] = [];
 
-  constructor(private getUsersService: UserService, public dialog: MatDialog, public dialogRef: MatDialogRef<ConfirmActionComponent> ) { }
+  constructor(private getUsersService: UserService, public dialog: MatDialog ) { }
 
   private _filterBy: string = '';
   get filterUsers(): string {

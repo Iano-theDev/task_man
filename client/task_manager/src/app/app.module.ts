@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
-import { RouterModule } from '@angular/router';
 import { StarComponent } from './shared/stars/star.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
     declarations: [
         AppComponent
@@ -24,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
         HeaderComponent,
         StarComponent,
         BrowserAnimationsModule,
-        HttpClientModule
+        HttpClientModule,
+        MatDialogModule
     ]
 })
 export class AppModule { }
