@@ -2,10 +2,10 @@
     <mat-card-content>
         <p>Proceede to delete user?</p>
     </mat-card-content>
-    <mat-card-actions>
-        <div>
-            <button mat-button color="primary">Cancel</button>
-            <button mat-button color="warn">Delete</button>
+    <mat-card-actions space-btns>
+        <div class="space-btns">
+            <button mat-button color="primary"(click)="onCancel()">Cancel</button>
+            <button mat-button color="warn" >Delete</button>
         </div>
     </mat-card-actions>
 </mat-card>
