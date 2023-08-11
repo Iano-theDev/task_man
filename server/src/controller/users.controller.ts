@@ -3,14 +3,27 @@ import { Request, Response } from "express";
 import User from "../models/user.model"
 import { subscribe } from "diagnostics_channel";
 
+import nodemailer from 'nodemailer';
 
-interface ExtendedResponse extends Response {
-    user: any
-}
 
-interface ExtendedRequest extends Request {
-    user: any
-}
+
+// interface ExtendedResponse extends Response {
+//     user: any
+// }
+
+// interface ExtendedRequest extends Request {
+//     user: any
+// }
+const transporter = nodemailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    auth: {
+        user: 'coleman.cronin64@ethereal.email',
+        pass: 'W9F63expKZmBrnwsGn'
+    }
+});
+
+
 
 
 // get all users
@@ -24,15 +37,30 @@ export const getAllUsers = async (req: Request, res: Response)=>{
 }
 // create user
 export const createUser = async (req: Request, res: Response) => {
+    
     const newUser = new User({
         userName: req.body.userName,
         email: req.body.email,
         password: req.body.password
     })
 
+
+
     try {
-        const saveUser = await newUser.save()
-        res.status(201).json({message: 'user saved successfully!', user: saveUser})
+        const savedUser = await newUser.save()
+        // res.status(201).json({message: 'user saved successfully!', user: savedUser})
+        let message = {
+            from: '"Fred Foo 👻" <foo@example.com>', // sender address
+            to: savedUser.email, // list of receivers
+            subject: "Hello ✔", // Subject line
+            text: "Hello world?", // plain text body
+            html: "<b>Hello from Task Man</b>", // html body
+          }
+
+        //   console.log("Gotemail", savedUser.email)
+        transporter.sendMail(message).then(()=>{
+            res.status(201).json({message: "You should recieve an email from taskMan!"})
+        })
     } catch (error: any) {
         res.status(400).json({message: error.message})
     }
