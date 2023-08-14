@@ -1,0 +1,27 @@
+.tasks-container {
+    padding: .5em;
+    display: flex;
+    gap: .5em;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    height: 10em;
+    width: 300px;
+}
+
+.card-actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1em;
+}

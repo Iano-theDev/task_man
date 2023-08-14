@@ -1,1 +1,16 @@
-<p>tasks works!</p>
+<div class="tasks-container" *ngIf="tasks">
+    <mat-card class="card-container" *ngFor="let task of tasks">
+        <div class="card-details">
+            <mat-card-title>{{task.title}}</mat-card-title>
+            <mat-card-content>{{task.description}}</mat-card-content>
+            <mat-progress-bar mode="determinate" [value]=40></mat-progress-bar>
+        </div>
+        <div class="card-actions">
+            <button mat-button ><mat-icon>delete</mat-icon></button>
+            <button mat-button ><mat-icon>edit</mat-icon></button>
+            <button mat-button ><mat-icon>done</mat-icon></button>
+        </div>
+
+        <h1 appHightlight>Highlight Me !</h1>
+    </mat-card>
+</div>

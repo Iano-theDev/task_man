@@ -10,9 +10,11 @@ import { StarComponent } from './shared/stars/star.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HighLightDirective } from './shared/directives/app-highlight.directive';
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HighLightDirective
     ],
     providers: [],
     bootstrap: [AppComponent],

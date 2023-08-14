@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { User } from '../models/user.model';
 import { UserService } from '../shared/services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ export class RegisterComponent {
   email = new FormControl('');
   password = new FormControl('');  
 
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService, private router: Router){}
   logData(e:Event) { 
     e.preventDefault()
     
@@ -40,6 +41,7 @@ export class RegisterComponent {
         throw "User entered is invalid"
       }
       this.userService.addUser(newUser).subscribe(res=>console.log(res))
+      this.router.navigate(['/login'])
       console.log('newUser: ', newUser);
       
     } catch (error) {
