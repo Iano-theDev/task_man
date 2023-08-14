@@ -7,7 +7,7 @@ import { StarComponent } from "../shared/stars/star.component";
 import { UserService } from '../shared/services/users.service';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { ConfirmActionComponent } from '../shared/confirm-action/confirm-action.component';
 
 @Component({
