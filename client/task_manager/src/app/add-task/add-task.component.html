@@ -1,37 +1,22 @@
 <div class="container">
     <h1>Add task</h1>
+    <mat-card class="task-card">
     <form>
         <mat-form-field appearance="outline">
             <mat-label>Tiltle</mat-label>
-            <input matInput placeholder="enter title">
+            <input matInput [formControl]="title" class="input-field">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
-            <input matInput placeholder="Placeholder">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Hint</mat-hint>
+            <input matInput [formControl]="description" class="input-field">
         </mat-form-field>
-        <mat-form-field>
-
+        <mat-form-field appearance="outline">
+            <mat-label>Due before</mat-label>
+            <input matInput [matDatepicker]="dueBefore" [formControl]="date" class="input-field">
+            <mat-datepicker-toggle matIconSuffix [for]="dueBefore"></mat-datepicker-toggle>
+            <mat-datepicker #dueBefore></mat-datepicker>
         </mat-form-field>
-        <mat-form-field>
-
-        </mat-form-field>
-        <!-- <div class="data-field">
-            <label>Title</label>
-            <input type="text" [formControl]="title">
-        </div>
-        <div class="data-field">
-            <label>description</label>
-            <input type="text" [formControl]="description" >
-        </div>
-        <div class="data-field">
-            <label>Date</label>
-            <input type="date" [formControl]="date">
-        </div>
-        <div class="submit-data">
-            <button type="submit" (click)="logData($event)">Add</button>
-        </div> -->
-
+        <button mat-fab color="primary"(click)="logData($event)"><mat-icon>add</mat-icon></button>
     </form>
+</mat-card>
 </div>
