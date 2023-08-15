@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HighLightDirective } from './shared/directives/app-highlight.directive';
+import {MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
     declarations: [
         AppComponent,
@@ -27,7 +28,8 @@ import { HighLightDirective } from './shared/directives/app-highlight.directive'
         StarComponent,
         BrowserAnimationsModule,
         HttpClientModule,
-        MatDialogModule
+        MatDialogModule,
+        MatFormFieldModule
     ]
 })
 export class AppModule { }

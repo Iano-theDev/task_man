@@ -1,7 +1,23 @@
 <div class="container">
     <h1>Add task</h1>
     <form>
-        <div class="data-field">
+        <mat-form-field appearance="outline">
+            <mat-label>Tiltle</mat-label>
+            <input matInput placeholder="enter title">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+
+        </mat-form-field>
+        <mat-form-field>
+
+        </mat-form-field>
+        <!-- <div class="data-field">
             <label>Title</label>
             <input type="text" [formControl]="title">
         </div>
@@ -15,8 +31,7 @@
         </div>
         <div class="submit-data">
             <button type="submit" (click)="logData($event)">Add</button>
-        </div>
+        </div> -->
 
     </form>
 </div>
-
