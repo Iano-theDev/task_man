@@ -28,8 +28,7 @@ import {MatFormFieldModule } from '@angular/material/form-field';
         StarComponent,
         BrowserAnimationsModule,
         HttpClientModule,
-        MatDialogModule,
-        MatFormFieldModule
+        MatDialogModule
     ]
 })
 export class AppModule { }

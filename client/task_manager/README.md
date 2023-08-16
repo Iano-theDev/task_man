@@ -16,3 +16,10 @@ TODO
 1. Create a button, that opens a dialog box, which contains a new 'chart-component'. This chart component will containa chart of usersId vs userRating
 2. Custom pipe to sort items. Sort in various specifiable ways eg. sort by dateCreated, alphabets, rating, etc.
 3. Fix toogle user details.
+
+### 16/08/2023
+* Clean Up users
+* Recreate Reguster & Login page UI. Use angular material to have a more consistent look
+* Add a button to tasks component that opens add-task dialog box within itself.
+* When a task is added from add task component, always route to the tasks component to view added task.
+* Write shorten description custom directive.
