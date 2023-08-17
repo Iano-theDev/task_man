@@ -23,3 +23,6 @@ TODO
 * Add a button to tasks component that opens add-task dialog box within itself.
 * When a task is added from add task component, always route to the tasks component to view added task.
 * Write shorten description custom directive.
+
+### 17/08/2023
+* Move filter/search to the navigation bar, use an icon.
