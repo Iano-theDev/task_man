@@ -1,13 +1,23 @@
 .container{
-    border: 1px solid rgb(0, 0, 0);
-    margin-top: 4em;
+    /* border: 1px solid rgb(0, 0, 0); */
+    /* margin-top: 4em; */
     display: flex;
     justify-content: center;
     align-items: "center";
     flex-direction: column;
-    padding: 2em;
-    width: 40%;
+    /* padding: 2em; */
+    /* width: 40%; */
     margin-left: 25%;
+
+    margin-bottom : 10px;
+}
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 400px;
 }
 
 h1 {
@@ -26,7 +36,7 @@ form {
 .submit-data {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
 }
 
 .data-field

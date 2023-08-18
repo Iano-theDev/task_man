@@ -6,6 +6,6 @@ import {Directive, ElementRef} from '@angular/core';
 
 export class HighLightDirective{
     constructor (private eleRef: ElementRef){
-        eleRef.nativeElement.style.background = 'red';
+        eleRef.nativeElement.style.background = '';
     }
 }

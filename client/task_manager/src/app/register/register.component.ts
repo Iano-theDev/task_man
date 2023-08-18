@@ -4,11 +4,15 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { User } from '../models/user.model';
 import { UserService } from '../shared/services/users.service';
 import { Router } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })

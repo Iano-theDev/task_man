@@ -1,22 +1,18 @@
 <div class="container">
-    <h1>Register</h1>
-    <form>
-        <div class="data-field">
-            <label>Username</label>
-            <input type="text" [formControl]="username">
-        </div>
-        <div class="data-field">
-            <label>Email</label>
-            <input type="email" [formControl]="email">
-        </div>
-        <div class="data-field">
-            <label>Password</label>
-            <input type="password" [formControl]="password">
-        </div>
-        <div class="submit-data">
-            <button type="submit" (click)="registerUser()">submit</button>
-        </div>
-
-    </form>
+    <mat-card class="cardContainer">
+        <h1>Register</h1>
+        <mat-form-field class="data-field">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" [formControl]="username">
+        </mat-form-field>
+        <mat-form-field class="data-field">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Username" type="email" [formControl]="email">
+        </mat-form-field>
+        <mat-form-field class="data-field">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Username" type="password" [formControl]="password">
+        </mat-form-field>
+        <button mat-button (click)="registerUser()" class="submit-data" color="primary">Sign Up</button>
+    </mat-card>
 </div>
-

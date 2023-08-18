@@ -19,7 +19,7 @@ TODO
 
 ### 16/08/2023
 * Clean Up users
-* Recreate Reguster & Login page UI. Use angular material to have a more consistent look
+* Recreate Register & Login page UI. Use angular material to have a more consistent look
 * Add a button to tasks component that opens add-task dialog box within itself.
 * When a task is added from add task component, always route to the tasks component to view added task.
 * Write shorten description custom directive.
