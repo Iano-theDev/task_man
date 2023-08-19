@@ -1,32 +1,15 @@
 <div class="container">
-    <h1>Login</h1>
-    <div class="container">
-        <mat-card class="cardContainer">
-            <h1>Log In</h1>
-            <mat-form-field class="data-field">
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="Username" type="email" [formControl]="email">
-            </mat-form-field>
-            <mat-form-field class="data-field">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="Username" type="password" [formControl]="password">
-            </mat-form-field>
-            <button mat-button (click)="loginUser()" class="submit-data" color="primary">Sign Up</button>
-        </mat-card>
-    </div>
-    <form>
-        <div class="data-field">
-            <label>Email</label>
-            <input type="email">
-        </div>
-        <div class="data-field">
-            <label>Password</label>
-            <input type="password">
-        </div>
-        <div class="submit-data">
-            <button type="submit" routerLink="/header">submit</button>
-        </div>
-
-    </form>
+    <mat-card class="cardContainer">
+        <h1>Log In</h1>
+        <mat-form-field appearance="outline" class="data-field">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Username" type="email" [formControl]="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="data-field">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Username" type="password" [formControl]="password">
+        </mat-form-field>
+        <button mat-raised-button (click)="loginUser()" class="submit-data" color="primary">Sign in</button>
+    </mat-card>
     <router-outlet name='sidebar'></router-outlet>
 </div>

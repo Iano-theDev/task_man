@@ -44,8 +44,6 @@ export const createUser = async (req: Request, res: Response) => {
         password: req.body.password
     })
 
-
-
     try {
         const savedUser = await newUser.save()
         // res.status(201).json({message: 'user saved successfully!', user: savedUser})
