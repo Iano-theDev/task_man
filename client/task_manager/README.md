@@ -26,3 +26,7 @@ TODO
 
 ### 17/08/2023
 * Move filter/search to the navigation bar, use an icon.
+
+### 29/08/2023
+* Update login auth for the server 
+* Update login auth for the client
