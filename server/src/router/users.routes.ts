@@ -1,12 +1,12 @@
-import { NextFunction, Router } from "express";
-import { Response } from "express";
-import { createUser, deleteUser, getAllUsers, getOneUser, updateUser } from "../controller/users.controller";
-import { ExtendedRequest, getUser } from "../middleware/users.middleware";
+import { Router } from "express";
+import { createUser, deleteUser, getAllUsers, getOneUser, loginUser, updateUser } from "../controller/users.controller";
+import { getUser } from "../middleware/users.middleware";
 
 const usersRouter = Router()
 
 usersRouter.get('', getAllUsers)
-usersRouter.post('', createUser)
+usersRouter.post('/register', createUser)
+usersRouter.post('/login', loginUser)
 usersRouter.get('/:id', getUser, getOneUser)
 usersRouter.delete('/:id', getUser, deleteUser)
 usersRouter.patch('/:id', updateUser)

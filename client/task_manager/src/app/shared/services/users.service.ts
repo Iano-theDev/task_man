@@ -8,7 +8,8 @@ import { Observable, catchError, tap, throwError } from 'rxjs'
 })
 export class UserService{
     private usersUrl = 'assets/users.json' 
-    private dbUsersUsrl = 'http://localhost:3000/users'
+    private registerUrl = 'http://localhost:3000/users/register'
+    private loginUrl = 'http://localhost:3000/users/login'
 
     constructor(private http: HttpClient){}
 
@@ -19,13 +20,18 @@ export class UserService{
     }
 
     getUsersFromDB(): Observable<User[]> {
-        return this.http.get<User[]>(this.dbUsersUsrl).pipe(
+        return this.http.get<User[]>(this.registerUrl).pipe(
             tap(users => console.log('Users from db: ', users), catchError(this.handleError))
         )
     }
 
     addUser(user: any) {
-        return this.http.post(this.dbUsersUsrl, user)
+        return this.http.post(this.registerUrl, user)
+    }
+
+    loginUser(user: any) {
+        console.log("logging in ...")
+        return this.http.post(this.loginUrl, user)
     }
     
     private handleError(err : HttpErrorResponse) {
